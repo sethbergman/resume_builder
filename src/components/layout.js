@@ -26,7 +26,7 @@ class NavBar extends Component {
     const storage = localStorage.getItem('data');
     if (storage !== null) {
       console.log(storage);
-      this.props.setAllState(JSON.parse(storage));
+      //      this.props.setAllState(JSON.parse(storage));
     }
   }
 
@@ -48,12 +48,12 @@ class NavBar extends Component {
   // 	this.setState({ width: window.innerWidth, height: window.innerHeight });
   // }
 
-  // handleClick = (e) => {
-  // 	console.log('click ', e);
-  // 	this.setState({
-  // 		current: e.key,
-  // 	});
-  // }
+  handleClick = e => {
+    console.log('click ', e);
+    this.setState({
+      current: e.key
+    });
+  };
 
   onCollapse = collapsed => {
     console.log(collapsed);
@@ -113,6 +113,7 @@ class NavBar extends Component {
                 </Link>
               </Menu.Item>
             </Menu>
+            <br />
             <Button ghost onClick={this.saveData} type="primary" icon="save" style={{ width: '150px' }}>
               Save
             </Button>

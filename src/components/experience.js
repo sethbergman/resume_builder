@@ -36,7 +36,7 @@ class Experience extends Component {
     });
   };
 
-  addInfo = () => {
+  addSectionInfo = index => {
     this.props.addSectionInfo({
       companyName: '',
       jobTitle: '',
@@ -106,7 +106,7 @@ class Experience extends Component {
                 <FormItem label="Enter Description">
                   <TextArea
                     rows={6}
-                    placeholder="I sold stuff..."
+                    placeholder="I am a builder of many softwares. Much engineer."
                     name="description"
                     value={item.description}
                     onChange={e => this.updateInfo(index, e)}

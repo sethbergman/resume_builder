@@ -38,7 +38,7 @@ export default function(state = INIT_STATE, action) {
     case ADD_SECTION_INFO:
       return {
         ...state,
-        [action.payload.type]: [...state[action.payload.type], action.payload.info]
+        [action.payload.type]: [...state[action.payload.type], action.payload.addSectionInfo]
       };
     case DELETE_SECTION_INFO:
       return {
