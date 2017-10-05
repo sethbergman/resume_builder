@@ -38,16 +38,13 @@
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
+    "babel-preset-env": "^1.6.0",
     "eslint": "^4.8.0",
     "eslint-plugin-react": "^7.4.0",
     "react-scripts": "1.0.14"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": ["prettier --single-quote --write", "git add"]
-  },
-  "jest": {
-    "scriptPreprocessor": "<rootDir>/support/preprocessor.js",
-    "unmockedModulePathPatterns": ["<rootDir>/node_modules/react"]
   },
   "scripts": {
     "start": "react-scripts start",
