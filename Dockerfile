@@ -1,5 +1,5 @@
 # Dockerfile
-FROM node:8
+FROM node:8.5.0
 
 ENV IN_DOCKER true
 
