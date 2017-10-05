@@ -1,0 +1,181 @@
+#root,
+html,
+body {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;  
+  font-family: Helvetica Neue, Helvetica, sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fbfbfb;
+}
+
+label,
+input,
+textarea,
+li {
+  font-size: 14px !important;
+}
+
+.form-reminder {
+  color: rgba(58, 63, 82, 0.8);
+  text-align: center;
+  font-size: 14px;
+  margin: 15px 0;
+}
+
+.ant-card {
+  max-width: 760px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.ant-btn {
+  font-weight: 400;
+}
+
+.logo {
+  /* line-height: 70px; */
+  text-align: center;
+  /* display: flex; 
+  justify-content: center; 
+  align-items: center;  */
+}
+
+.logo img {
+  height: 60px;
+  padding: 15px 0;
+}
+
+.ant-layout {
+  background-color: #fbfbfb;  
+}
+
+/* LOWER NAV */
+
+.lower-nav {
+  margin: 0 auto;
+}
+
+.lower-nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+.lower-nav li {
+  list-style: none;
+  text-align: center;
+}
+
+.lower-nav li Button {
+  margin: 18px;
+}
+
+.lower-nav li a {
+  text-decoration: none;
+}
+
+
+
+/********/
+
+#resume-theme {
+	/* font-family: 'Avenir', Helvetica, Arial, sans-serif; */
+	margin: 15px auto 35px auto;
+	width: 7.23in;
+	height: 9.36in;
+	height: 8.36in;
+	/* width: 8.5in; */
+	/* mso-header-margin: .5in;
+	mso-footer-margin: .5in;
+	mso-paper-source: 0; */
+	/* z-index: 5000; */
+	/* text-align: center; */
+	/* font-weight: 300; */
+	/* overflow: visible !important;
+	box-sizing: border-box; */
+	/* padding: 40px; */
+	border: 1px solid rgba(49, 53, 68, 0.1);
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+	/* z-index: 0; */
+	/* width: 7.23in;
+	border: 1px solid rgba(49, 53, 68, 0.1);
+	margin: 0 auto;
+	font-size: 75%;
+	-webkit-transform-origin: 0 0;
+  transform-origin: 0 0; */
+	/* overflow: visible; */
+	box-sizing: border-box;
+	overflow: auto;
+	padding: 10mm 12mm;
+	font-size: 85%;
+	/* font-size: 70.5%; */
+}
+
+@media (max-width: 800px) {
+	#resume-theme {
+		margin-top: 30px;
+	}
+}
+
+@media (max-width: 7.6in) {
+	#resume-theme {
+		-webkit-transform: scale(0.9);
+		transform: scale(0.9);
+		position: relative;
+		left: 50%;
+		margin-left: -3.2535in;
+	}
+}
+
+@media (max-width: 6.9in) {
+	#resume-theme {
+		-webkit-transform: scale(0.8);
+		transform: scale(0.8);
+		margin-left: -2.892in;
+	}
+}
+
+@media (max-width: 6.1in) {
+	#resume-theme {
+		-webkit-transform: scale(0.7);
+		transform: scale(0.7);
+		margin-left: -2.5305;
+	}
+}
+
+@media (max-width: 5.4in) {
+	#resume-theme {
+		-webkit-transform: scale(0.6);
+		transform: scale(0.6);
+		margin-left: -2.169in;
+	}
+}
+
+@media (max-width: 4.6in) {
+	#resume-theme {
+		-webkit-transform: scale(0.5);
+		transform: scale(0.5);
+		margin-left: -1.8075in;
+	}
+}
+
+@media (max-width: 3.8in) {
+	#resume-theme {
+		-webkit-transform: scale(0.4);
+		transform: scale(0.4);
+		margin-left: -1.446in;
+	}
+}
+
+@media (max-width: 3in) {
+	#resume-theme {
+		-webkit-transform: scale(0.3);
+		transform: scale(0.3);
+		margin-left: -1.0845in;
+	}
+}
