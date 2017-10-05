@@ -10,12 +10,12 @@ WORKDIR /usr/src/app
 # Install app dependencies
 COPY package.json /usr/src/app/
 # COPY yarn.lock /usr/src/app/
-RUN npm install --no-progress
+RUN yarn install --no-progress
 
 # Bundle app source
 COPY . /usr/src/app
 
-EXPOSE 3000:80
+EXPOSE 3000
 
 # defined in package.json
 CMD [ "npm", "run", "start" ]
