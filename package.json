@@ -1,8 +1,15 @@
 {
-  "name": "resume-builder",
+  "name": "resume_builder",
   "homepage": "http://resume-builder.sethbergman.com",
   "version": "0.1.0",
   "private": true,
+  "repository": "git+https://github.com/sethbergman/resume-builder.git",
+  "author": "Seth Bergman <hello@sethbergman.com> (https://sethbergman.com)",
+  "engines": {
+    "node": "8.5.0",
+    "npm": "5.4.2"
+  },
+  "license": "MIT",
   "dependencies": {
     "antd": "^2.13.4",
     "axios": "^0.16.2",
@@ -36,16 +43,11 @@
     "react-scripts": "1.0.14"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,json,css}": [
-      "prettier --single-quote --write",
-      "git add"
-    ]
+    "src/**/*.{js,jsx,json,css}": ["prettier --single-quote --write", "git add"]
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/support/preprocessor.js",
-    "unmockedModulePathPatterns": [
-      "<rootDir>/node_modules/react"
-    ]
+    "unmockedModulePathPatterns": ["<rootDir>/node_modules/react"]
   },
   "scripts": {
     "start": "react-scripts start",
