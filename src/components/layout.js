@@ -26,7 +26,7 @@ class NavBar extends Component {
     const storage = localStorage.getItem('data');
     if (storage !== null) {
       console.log(storage);
-      //      this.props.setAllState(JSON.parse(storage));
+      this.props.setAllState(JSON.parse(storage));
     }
   }
 
@@ -125,6 +125,7 @@ class NavBar extends Component {
               <Route path="/summary" component={Summary} />
               <Route path="/education" component={Education} />
               <Route path="/project" component={Project} />
+              <Route path="/pdf" component={FinishUp} />
               <Route path="/" component={BasicInfo} />
             </Switch>
           </Layout>
