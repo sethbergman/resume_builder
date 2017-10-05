@@ -1,6 +1,6 @@
 {
-  "short_name": "Seth Bergman - Resume",
-  "name": "Seth Bergman's Professional Resume",
+  "short_name": "resume-builder",
+  "name": "resume-builder",
   "icons": [
     {
       "src": "favicon.ico",

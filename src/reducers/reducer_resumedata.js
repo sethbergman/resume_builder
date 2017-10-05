@@ -1,5 +1,11 @@
-import { UPDATE_BASIC_INFO, UPDATE_SECTION_INFO, SET_ALL_STATE, DELETE_SECTION_INFO,
-ADD_SECTION_INFO, UPDATE_SUMMARY } from '../actions/index';
+import {
+  UPDATE_BASIC_INFO,
+  UPDATE_SECTION_INFO,
+  SET_ALL_STATE,
+  DELETE_SECTION_INFO,
+  ADD_SECTION_INFO,
+  UPDATE_SUMMARY
+} from '../actions/index';
 
 const INIT_STATE = {
   basicInfo: {},
@@ -9,11 +15,10 @@ const INIT_STATE = {
   projectAr: []
 };
 
-export default function (state = INIT_STATE, action) {
-
+export default function(state = INIT_STATE, action) {
   switch (action.type) {
     case SET_ALL_STATE:
-      return action.payload
+      return action.payload;
     case UPDATE_BASIC_INFO:
       return {
         ...state,
@@ -33,10 +38,7 @@ export default function (state = INIT_STATE, action) {
     case ADD_SECTION_INFO:
       return {
         ...state,
-        [action.payload.type]: [
-          ...state[action.payload.type],
-          action.payload.info
-        ]
+        [action.payload.type]: [...state[action.payload.type], action.payload.info]
       };
     case DELETE_SECTION_INFO:
       return {
@@ -47,9 +49,8 @@ export default function (state = INIT_STATE, action) {
       return {
         ...state,
         summary: action.payload
-      }
+      };
     default:
       return state;
   }
-
 }

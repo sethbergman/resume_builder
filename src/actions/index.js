@@ -30,7 +30,7 @@ export function addSectionInfo(payload) {
   return {
     type: ADD_SECTION_INFO,
     payload: payload
-  }
+  };
 }
 
 export function deleteSectionInfo(index) {

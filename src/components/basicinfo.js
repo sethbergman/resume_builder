@@ -16,34 +16,50 @@ class BasicInfo extends Component {
 
   componentWillUpdate() {
     localStorage.setItem('data', JSON.stringify(this.props.resumeData));
-    console.log('saved store')
+    console.log('saved store');
   }
 
-  onChange = (e) => {
+  onChange = e => {
     this.props.updateBasicInfo({
-        name: e.target.name,
-        value: e.target.value
+      name: e.target.name,
+      value: e.target.value
     });
-  }
+  };
 
   render() {
-    const { fullName, email, phoneNumber, address, personalWebsite, linkedIn } = this.props.resumeData.basicInfo;
+    const {
+      fullName,
+      email,
+      phoneNumber,
+      address,
+      personalWebsite,
+      linkedIn
+    } = this.props.resumeData.basicInfo;
 
     return (
       <div>
         <p className="form-reminder">Remember, if you don't want something on your resume, leave it blank!</p>
         <Card title="Basic Information">
           <Form layout={this.formLayout}>
-
             <div className="row">
               <div className="col-md-6">
                 <FormItem label="Enter Full Name">
-                  <Input placeholder="Seth Bergman" name="fullName" value={fullName} onChange={this.onChange} />
+                  <Input
+                    placeholder="Seth Bergman"
+                    name="fullName"
+                    value={fullName}
+                    onChange={this.onChange}
+                  />
                 </FormItem>
               </div>
               <div className="col-md-6">
                 <FormItem label="Enter Email">
-                  <Input placeholder="hello@sethbergman.com" name="email" value={email} onChange={this.onChange} />
+                  <Input
+                    placeholder="hello@sethbergman.com"
+                    name="email"
+                    value={email}
+                    onChange={this.onChange}
+                  />
                 </FormItem>
               </div>
             </div>
@@ -51,7 +67,12 @@ class BasicInfo extends Component {
             <div className="row">
               <div className="col-md-6">
                 <FormItem label="Enter Phone Number">
-                  <Input placeholder="512-701-0186" name="phoneNumber" value={phoneNumber} onChange={this.onChange} />
+                  <Input
+                    placeholder="512-701-0186"
+                    name="phoneNumber"
+                    value={phoneNumber}
+                    onChange={this.onChange}
+                  />
                 </FormItem>
               </div>
               <div className="col-md-6">
@@ -64,16 +85,25 @@ class BasicInfo extends Component {
             <div className="row">
               <div className="col-md-6">
                 <FormItem label="Personal Website">
-                  <Input placeholder="https://sethbergman.com" name="personalWebsite" value={personalWebsite} onChange={this.onChange} />
+                  <Input
+                    placeholder="https://sethbergman.com"
+                    name="personalWebsite"
+                    value={personalWebsite}
+                    onChange={this.onChange}
+                  />
                 </FormItem>
               </div>
               <div className="col-md-6">
                 <FormItem label="LinkedIn">
-                  <Input placeholder="linkedin/sethbergman" name="linkedIn" value={linkedIn} onChange={this.onChange} />
+                  <Input
+                    placeholder="linkedin/sethbergman"
+                    name="linkedIn"
+                    value={linkedIn}
+                    onChange={this.onChange}
+                  />
                 </FormItem>
               </div>
             </div>
-
           </Form>
         </Card>
       </div>
@@ -88,4 +118,3 @@ function mapStateToProps({ resumeData }) {
 }
 
 export default connect(mapStateToProps, { updateBasicInfo })(BasicInfo);
-

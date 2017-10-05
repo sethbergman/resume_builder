@@ -1,12 +1,16 @@
 {
-  "name": "sethbergman-resume",
+  "name": "resume-builder",
+  "homepage": "http://resume-builder.sethbergman.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "antd": "^2.13.4",
     "axios": "^0.16.2",
     "enzyme": "^3.1.0",
+    "eslint-plugin-prettier": "^2.3.1",
     "husky": "^0.14.3",
+    "jest": "^21.2.1",
+    "jsdom": "^11.3.0",
     "lint-staged": "^4.2.3",
     "lodash.debounce": "^4.0.8",
     "prettier": "^1.7.4",
@@ -20,9 +24,15 @@
     "react-scripts": "1.0.14",
     "react-slick": "^0.15.4",
     "redux": "^3.7.2",
+    "redux-immutable-state-invariant": "^2.1.0",
+    "redux-thunk": "^2.2.0",
+    "remote-redux-devtools": "^0.5.12",
+    "serve": "^6.2.0",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
+    "eslint": "^4.8.0",
+    "eslint-plugin-react": "^7.4.0",
     "react-scripts": "1.0.14"
   },
   "lint-staged": {
@@ -31,11 +41,18 @@
       "git add"
     ]
   },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/support/preprocessor.js",
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react"
+    ]
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "lint": "eslint src/**/*.{js,jsx,css}"
   }
 }
