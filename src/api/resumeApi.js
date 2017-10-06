@@ -36,7 +36,7 @@ class ResumeApi {
       });
   }
 
-  static createResume(ResumeApi) {
+  static addInfo() {
     const headers = Object.assign({ 'Content-Type': 'application/json' }, this.requestHeaders());
     const request = new Request(`${process.env.API_HOST}/api/v1/resume`, {
       method: 'POST',
@@ -53,9 +53,9 @@ class ResumeApi {
       });
   }
 
-  static deleteCat(cat) {
+  static deleteInfo() {
     const headers = Object.assign({ 'Content-Type': 'application/json' }, this.requestHeaders());
-    const request = new Request(`${process.env.API_HOST}/api/v1/cats/${cat.id}`, {
+    const request = new Request(`${process.env.API_HOST}/api/v1/resume/${resumeData.id}`, {
       method: 'DELETE',
       headers: headers
     });
