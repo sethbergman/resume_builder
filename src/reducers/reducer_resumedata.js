@@ -6,6 +6,7 @@ import {
   ADD_SECTION_INFO,
   UPDATE_SUMMARY
 } from '../actions/index';
+// import { LOG_IN_SUCCESS, LOG_OUT } from '../actions/index';
 
 const INIT_STATE = {
   basicInfo: {},
