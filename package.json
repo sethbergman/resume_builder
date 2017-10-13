@@ -45,16 +45,13 @@
     "react-scripts": "1.0.14"
   },
   "lint-staged": {
-    "src/*.{js,jsx,json,css}": [
-      "prettier --single-quote --write",
-      "git add"
-    ]
+    "src/*.{js,jsx,json,css}": ["prettier --single-quote --write", "git add"]
   },
   "scripts": {
     "start": "react-scripts start",
     "serve": "serve -s build -p 3000",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "precommit": "lint-staged",
     "lint": "eslint src/*.{js,jsx,css}"

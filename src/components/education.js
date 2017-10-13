@@ -1,11 +1,7 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { Card, Form, Input, Button } from "antd";
-import {
-  updateSectionInfo,
-  addSectionInfo,
-  deleteSectionInfo
-} from "../actions/index";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Card, Form, Input, Button } from 'antd';
+import { updateSectionInfo, addSectionInfo, deleteSectionInfo } from '../actions/index';
 
 const FormItem = Form.Item;
 const { TextArea } = Input;
@@ -15,13 +11,13 @@ class Education extends Component {
     super(props);
 
     this.state = {
-      formLayout: "vertical"
+      formLayout: 'vertical'
     };
   }
 
   componentWillUpdate() {
-    localStorage.setItem("data", JSON.stringify(this.props.resumeData));
-    console.log("saved store");
+    localStorage.setItem('data', JSON.stringify(this.props.resumeData));
+    console.log('saved store');
   }
 
   updateInfo = (index, e) => {
@@ -29,27 +25,27 @@ class Education extends Component {
       name: e.target.name,
       value: e.target.value,
       index: index,
-      type: "educationAr"
+      type: 'educationAr'
     });
   };
 
   deleteInfo = index => {
     this.props.deleteSectionInfo({
       index: index,
-      type: "educationAr"
+      type: 'educationAr'
     });
   };
 
-  addInfo = (index, e) => {
+  addInfo = () => {
     this.props.addSectionInfo({
       info: {
-        name: "",
-        institute: "",
-        location: "",
-        dateEarned: "",
-        gpa: ""
+        name: '',
+        institute: '',
+        location: '',
+        dateEarned: '',
+        gpa: ''
       },
-      type: "educationAr"
+      type: 'educationAr'
     });
   };
 
@@ -59,14 +55,7 @@ class Education extends Component {
         <Card
           title={`Qualification ${index + 1}`}
           key={index}
-          extra={
-            <Button
-              ghost
-              type="danger"
-              icon="delete"
-              onClick={() => this.deleteInfo(index)}
-            />
-          }
+          extra={<Button ghost type="danger" icon="delete" onClick={() => this.deleteInfo(index)} />}
         >
           <Form layout={this.formLayout}>
             <div className="row">
@@ -75,8 +64,8 @@ class Education extends Component {
                   <Input
                     placeholder="Computer Science"
                     name="name"
-                    value={index.item}
-                    onChange={e => this.updateInfo(item, e)}
+                    value={item.name}
+                    onChange={e => this.updateInfo(index, e)}
                   />
                 </FormItem>
               </div>
@@ -85,7 +74,7 @@ class Education extends Component {
                   <Input
                     placeholder="Texas State University"
                     name="institute"
-                    value={index.institute}
+                    value={item.institute}
                     onChange={e => this.updateInfo(index, e)}
                   />
                 </FormItem>
@@ -98,7 +87,7 @@ class Education extends Component {
                   <Input
                     placeholder="San Marcos, TX"
                     name="location"
-                    value={index.location}
+                    value={item.location}
                     onChange={e => this.updateInfo(index, e)}
                   />
                 </FormItem>
@@ -108,7 +97,7 @@ class Education extends Component {
                   <Input
                     placeholder="Aug 2004 - Aug 2008"
                     name="date"
-                    value={index.date}
+                    value={item.date}
                     onChange={e => this.updateInfo(index, e)}
                   />
                 </FormItem>
@@ -122,7 +111,7 @@ class Education extends Component {
                     rows={6}
                     placeholder="3.94"
                     name="gpa"
-                    value={index.gpa}
+                    value={item.gpa}
                     onChange={e => this.updateInfo(index, e)}
                   />
                 </FormItem>
@@ -137,12 +126,10 @@ class Education extends Component {
   render() {
     return (
       <div>
-        <p className="form-reminder">
-          Remember, if you don't want something on your resume, leave it blank!
-        </p>
+        <p className="form-reminder">Remember, if you don't want something on your resume, leave it blank!</p>
 
-        <div style={{ textAlign: "center", marginBottom: "30px" }}>
-          <Button type="primary" icon="plus" onClick={this.addInfo}>
+        <div style={{ textAlign: 'center', marginBottom: '30px' }}>
+          <Button type="primary" icon="plus" onClick={this.addSectionInfo}>
             Add New Education
           </Button>
         </div>
@@ -159,8 +146,4 @@ function mapStateToProps({ resumeData }) {
   };
 }
 
-export default connect(mapStateToProps, {
-  updateSectionInfo,
-  addSectionInfo,
-  deleteSectionInfo
-})(Education);
+export default connect(mapStateToProps, { updateSectionInfo, addSectionInfo, deleteSectionInfo })(Education);

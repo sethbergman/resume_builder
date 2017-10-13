@@ -77,4 +77,4 @@ function mapStateToProps({ resumeData }) {
   };
 }
 
-export default connect(mapStateToProps, this.resumeData)(FinishUp);
+export default connect(mapStateToProps, null)(FinishUp);

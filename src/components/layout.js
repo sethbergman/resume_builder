@@ -25,15 +25,19 @@ class NavBar extends Component {
   componentWillMount() {
     const storage = localStorage.getItem('data');
     if (storage !== null) {
-      console.log(storage);
+      // console.log(storage);
       this.props.setAllState(JSON.parse(storage));
     }
   }
 
   saveData = () => {
-    console.log('slol.');
+    // console.log(this.newFunction());
     localStorage.setItem('data', JSON.stringify(this.props.resumeData));
   };
+
+    newFunction() {
+        return 'slol.';
+    }
 
   componentDidMount() {
   	this.updateWindowDimensions();
@@ -49,14 +53,14 @@ class NavBar extends Component {
   }
 
   handleClick = e => {
-    console.log('click ', e);
+    // console.log('click ', e);
     this.setState({
       current: e.key
     });
   };
 
   onCollapse = collapsed => {
-    console.log(collapsed);
+    // console.log(collapsed);
     this.setState({ collapsed });
   };
 

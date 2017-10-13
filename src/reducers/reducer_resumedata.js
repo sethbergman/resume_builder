@@ -10,7 +10,7 @@ import {
 
 const INIT_STATE = {
   basicInfo: {},
-  summary: '',
+  summary: "",
   experienceAr: [],
   educationAr: [],
   projectAr: []
@@ -39,12 +39,17 @@ export default function(state = INIT_STATE, action) {
     case ADD_SECTION_INFO:
       return {
         ...state,
-        [action.payload.type]: [...state[action.payload.type], action.payload.addSectionInfo]
+        [action.payload.type]: [
+          ...state[action.payload.type],
+          action.payload.addSectionInfo
+        ]
       };
     case DELETE_SECTION_INFO:
       return {
         ...state,
-        [action.payload.type]: state[action.payload.type].filter((_, i) => i !== action.payload.index)
+        [action.payload.type]: state[action.payload.type].filter(
+          (_, i) => i !== action.payload.index
+        )
       };
     case UPDATE_SUMMARY:
       return {
