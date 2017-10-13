@@ -4,7 +4,7 @@ import { Card, Form, Input, Button } from 'antd';
 import { updateSectionInfo, addSectionInfo, deleteSectionInfo } from '../actions/index';
 
 const FormItem = Form.Item;
-const { TextArea } = Input
+const { TextArea } = Input;
 
 class Education extends Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class Education extends Component {
 
   componentWillUpdate() {
     localStorage.setItem('data', JSON.stringify(this.props.resumeData));
-    console.log('saved store')
+    console.log('saved store');
   }
 
   updateInfo = (index, e) => {
@@ -27,14 +27,14 @@ class Education extends Component {
       index: index,
       type: 'educationAr'
     });
-  }
+  };
 
-  deleteInfo = (index) => {
+  deleteInfo = index => {
     this.props.deleteSectionInfo({
       index: index,
       type: 'educationAr'
     });
-  }
+  };
 
   addInfo = () => {
     this.props.addSectionInfo({
@@ -47,26 +47,36 @@ class Education extends Component {
       },
       type: 'educationAr'
     });
-  }
-  
+  };
+
   education = () => {
     return this.props.resumeData.educationAr.map((item, index) => {
       return (
-        <Card title={`Qualification ${index + 1}`} key={index} 
-          extra={<Button ghost type="danger" icon="delete" onClick={() => this.deleteInfo(index)}></Button>}>
-          <Form layout={this.formLayout} >
-
+        <Card
+          title={`Qualification ${index + 1}`}
+          key={index}
+          extra={<Button ghost type="danger" icon="delete" onClick={() => this.deleteInfo(index)} />}
+        >
+          <Form layout={this.formLayout}>
             <div className="row">
               <div className="col-md-6">
                 <FormItem label="Enter Qualification Name">
-                  <Input placeholder="Bachelor of Science" name="name" value={item.name}
-                    onChange={(e) => this.updateInfo(index, e)} />
+                  <Input
+                    placeholder="Computer Science"
+                    name="name"
+                    value={item.name}
+                    onChange={e => this.updateInfo(index, e)}
+                  />
                 </FormItem>
               </div>
               <div className="col-md-6">
                 <FormItem label="Enter Intitute">
-                  <Input placeholder="University of Toronto" name="institute" value={item.institute}
-                    onChange={(e) => this.updateInfo(index, e)} />
+                  <Input
+                    placeholder="Texas State University"
+                    name="institute"
+                    value={item.institute}
+                    onChange={e => this.updateInfo(index, e)}
+                  />
                 </FormItem>
               </div>
             </div>
@@ -74,14 +84,22 @@ class Education extends Component {
             <div className="row">
               <div className="col-md-6">
                 <FormItem label="Enter Institute Location">
-                  <Input placeholder="Scranton, PA" name="location" value={item.location}
-                    onChange={(e) => this.updateInfo(index, e)} />
+                  <Input
+                    placeholder="San Marcos, TX"
+                    name="location"
+                    value={item.location}
+                    onChange={e => this.updateInfo(index, e)}
+                  />
                 </FormItem>
               </div>
               <div className="col-md-6">
                 <FormItem label="Enter Date">
-                  <Input placeholder="Jan 2017 - Aug 2018" name="date" value={item.date}
-                    onChange={(e) => this.updateInfo(index, e)} />
+                  <Input
+                    placeholder="Aug 2004 - Aug 2008"
+                    name="date"
+                    value={item.date}
+                    onChange={e => this.updateInfo(index, e)}
+                  />
                 </FormItem>
               </div>
             </div>
@@ -89,17 +107,21 @@ class Education extends Component {
             <div className="row">
               <div className="col-md-12">
                 <FormItem label="Enter GPA (if applicable)">
-                  <TextArea rows={6} placeholder="3.14" name="gpa" value={item.gpa}
-                    onChange={(e) => this.updateInfo(index, e)} />
+                  <TextArea
+                    rows={6}
+                    placeholder="3.94"
+                    name="gpa"
+                    value={item.gpa}
+                    onChange={e => this.updateInfo(index, e)}
+                  />
                 </FormItem>
               </div>
             </div>
-
           </Form>
         </Card>
       );
     });
-  }
+  };
 
   render() {
     return (
@@ -107,7 +129,9 @@ class Education extends Component {
         <p className="form-reminder">Remember, if you don't want something on your resume, leave it blank!</p>
 
         <div style={{ textAlign: 'center', marginBottom: '30px' }}>
-          <Button type="primary" icon="plus" onClick={this.addInfo}>Add New Education</Button>
+          <Button type="primary" icon="plus" onClick={this.addInfo}>
+            Add New Education
+          </Button>
         </div>
 
         {this.education()}

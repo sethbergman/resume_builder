@@ -4,7 +4,7 @@ import { Card, Form, Input, Button } from 'antd';
 import { updateSectionInfo, addSectionInfo, deleteSectionInfo } from '../actions/index';
 
 const FormItem = Form.Item;
-const { TextArea } = Input
+const { TextArea } = Input;
 
 class Project extends Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class Project extends Component {
 
   componentWillUpdate() {
     localStorage.setItem('data', JSON.stringify(this.props.resumeData));
-    console.log('saved store')
+    console.log('saved store');
   }
 
   updateInfo = (index, e) => {
@@ -27,14 +27,14 @@ class Project extends Component {
       index: index,
       type: 'projectAr'
     });
-  }
+  };
 
-  deleteInfo = (index) => {
+  deleteInfo = index => {
     this.props.deleteSectionInfo({
       index: index,
       type: 'projectAr'
     });
-  }
+  };
 
   addInfo = () => {
     this.props.addSectionInfo({
@@ -44,20 +44,26 @@ class Project extends Component {
       },
       type: 'projectAr'
     });
-  }
-  
+  };
+
   projects = () => {
     return this.props.resumeData.projectAr.map((item, index) => {
       return (
-        <Card title={`Project ${index + 1}`} key={index} 
-          extra={<Button ghost type="danger" icon="delete" onClick={() => this.deleteInfo(index)}></Button>}>
-          <Form layout={this.formLayout} >
-
+        <Card
+          title={`Project ${index + 1}`}
+          key={index}
+          extra={<Button ghost type="danger" icon="delete" onClick={() => this.deleteInfo(index)} />}
+        >
+          <Form layout={this.formLayout}>
             <div className="row">
               <div className="col-md-12">
                 <FormItem label="Enter Project Name">
-                  <Input placeholder="Stock Tracker" name="name" value={item.name}
-                    onChange={(e) => this.updateInfo(index, e)} />
+                  <Input
+                    placeholder="Stock Tracker"
+                    name="name"
+                    value={item.name}
+                    onChange={e => this.updateInfo(index, e)}
+                  />
                 </FormItem>
               </div>
             </div>
@@ -65,17 +71,21 @@ class Project extends Component {
             <div className="row">
               <div className="col-md-12">
                 <FormItem label="Enter Project Description">
-                  <TextArea rows={6} placeholder="Stock tracker does stuff..." name="description" value={item.description}
-                    onChange={(e) => this.updateInfo(index, e)} />
+                  <TextArea
+                    rows={6}
+                    placeholder="Stock tracker does stuff..."
+                    name="description"
+                    value={item.description}
+                    onChange={e => this.updateInfo(index, e)}
+                  />
                 </FormItem>
               </div>
             </div>
-
           </Form>
         </Card>
       );
     });
-  }
+  };
 
   render() {
     return (
@@ -83,7 +93,9 @@ class Project extends Component {
         <p className="form-reminder">Remember, if you don't want something on your resume, leave it blank!</p>
 
         <div style={{ textAlign: 'center', marginBottom: '30px' }}>
-          <Button type="primary" icon="plus" onClick={this.addInfo}>Add New Project</Button>
+          <Button type="primary" icon="plus" onClick={this.addInfo}>
+            Add New Project
+          </Button>
         </div>
 
         {this.projects()}
