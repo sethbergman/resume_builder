@@ -34,7 +34,7 @@ export class MyErrorBoundary extends Component {
 export class Profile extends Component {
   onClick = () => {
     this.setState(state => {
-      throw new Error('Oh nooo!');
+      // throw new Error('Oh nooo!');
       return { ...state };
     });
   };

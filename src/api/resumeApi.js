@@ -21,7 +21,7 @@ class ResumeApi {
 
   static updateSectionInfo(section) {
     const headers = Object.assign({ 'Content-Type': 'application/json' }, this.requestHeaders());
-    const request = new Request(`${process.env.API_HOST}/api/v1/resume/${resumeData.id}`, {
+    const request = new Request(`${process.env.API_HOST}/api/v1/resume/${resumeData}`, {
       method: 'PUT',
       headers: headers,
       body: JSON.stringify({ resume: resumeData })
@@ -55,7 +55,7 @@ class ResumeApi {
 
   static deleteInfo() {
     const headers = Object.assign({ 'Content-Type': 'application/json' }, this.requestHeaders());
-    const request = new Request(`${process.env.API_HOST}/api/v1/resume/${resumeData.id}`, {
+    const request = new Request(`${process.env.API_HOST}/api/v1/resume/${resumeData}`, {
       method: 'DELETE',
       headers: headers
     });

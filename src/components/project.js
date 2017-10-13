@@ -61,7 +61,7 @@ class Project extends Component {
                   <Input
                     placeholder="Stock Tracker"
                     name="name"
-                    value={item.name}
+                    value={item, index}
                     onChange={e => this.updateInfo(index, e)}
                   />
                 </FormItem>
@@ -75,7 +75,7 @@ class Project extends Component {
                     rows={6}
                     placeholder="Stock tracker does stuff..."
                     name="description"
-                    value={item.description}
+                    value={item, index}
                     onChange={e => this.updateInfo(index, e)}
                   />
                 </FormItem>

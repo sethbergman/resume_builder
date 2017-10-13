@@ -41,8 +41,8 @@ class Experience extends Component {
       companyName: '',
       jobTitle: '',
       date: '',
-      companyLocation: '',
-      description: ''
+      companyLocation: {},
+      description: {}
     });
   };
 
